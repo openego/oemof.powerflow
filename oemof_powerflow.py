@@ -8,8 +8,7 @@ class Bus(OemofBus):
     # add attribures necessary for pypsa (use talking names)
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.list_name = kwargs.get("list_name", None)    
-        self.name = kwargs.get("name", None)
+        self.class_name = kwargs.get("class_name", None)    
         self.nominal_voltage = kwargs.get("v_nom", None)
 
 class Generator(OemofComponent):
@@ -17,31 +16,28 @@ class Generator(OemofComponent):
     # add attribures necessary for pypsa (use talking names)
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.list_name = kwargs.get("list_name", None)
-        self.name = kwargs.get("name", None)
+        self.class_name = kwargs.get("class_name", None)
         self.bus = kwargs.get("bus", None)
-        self.active_power_setpoint = kwargs.get("p_set", None)
+        self.active_power_setpoint = kwargs.get("active_power_setpoint", None)
 
 class Load(OemofComponent):
     
     # add attribures necessary for pypsa (use talking names)
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.list_name = kwargs.get("list_name", None)
-        self.name = kwargs.get("name", None)
+        self.class_name = kwargs.get("class_name", None)
         self.bus = kwargs.get("bus", None)
-        self.active_power_setpoint = kwargs.get("p_set", None)
+        self.active_power_setpoint = kwargs.get("active_power_setpoint", None)
 
 class Line(OemofComponent):
     
     # add attribures necessary for pypsa (use talking names)
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.list_name = kwargs.get("list_name", None)
-        self.name = kwargs.get("name", None)
+        self.class_name = kwargs.get("class_name", None)
         self.bus0 = kwargs.get("bus0", None)
         self.bus1 = kwargs.get("bus1", None)
-        self.active_power_setpoint = kwargs.get("p_set", None)
+        self.resistance = kwargs.get("resistance", None)
         
         
 class EnergySystem(OemofEnergySystem):
